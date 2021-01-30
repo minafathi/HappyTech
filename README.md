@@ -1,6 +1,8 @@
 # HappyTech
 
 Case Study
+**********
+
 The company HappyTech is growing and advertises a significant number of positions. Therefore, the
 number of applications they have to deal with is increasing too. The company’s policy is to respond to
 both the successful and unsuccessful applications by sending them feedback. As writing up letters for

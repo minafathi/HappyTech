@@ -1,0 +1,49 @@
+.navbar {
+    height: 50px !important;
+    background-color: #1b235f !important;
+    color: white !important;
+    text-align: center;
+    margin: auto !important;
+}
+
+a {
+    color: white !important; 
+}
+
+.nav-item {
+    margin-left: 20px !important;
+}
+
+.login {
+    position: fixed;
+    right: 20px !important;
+}
+
+.active {
+    height: 50px !important;
+    background-color: #a9d7ef !important;
+    color: black !important;
+}
+
+.background {
+    margin-top: 50px !important;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    background-image: url('http://localhost:90/happytech/assets/images/back2.jpg');
+    z-index: 0;
+}
+
+.backimg {
+    z-index: 0;
+}
+
+.welcome {
+    z-index: 10;
+    margin: 0 auto !important;
+    width: 100%;
+    position: absolute;
+    right: 40% !important;
+    left: 40% !important;
+    top: 380px;
+}

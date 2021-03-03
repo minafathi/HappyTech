@@ -1,87 +1,74 @@
-<?php 
-defined('BASEPATH') OR exit('No direct script access allowed');
+<hr>
+
+<div style="color:red">
+	<?php echo validation_errors(); ?>
+  <?php if(isset($error)){print $error;}?>
+</div>
+<?php echo form_open_multipart('upload/file_data');?>
+
+<div class="form-group">
+    <label for="pic_title">Full Name*:</label>
+    <input type="text" class="form-control" name="fullname"   id="fullname">
+  </div>
+
+  <div class="form-group">
+    <label for="pic_title">Email*:</label>
+    <input type="email" class="form-control" name="email"    id="email">
+  </div>
+
+  <div class="form-group">
+    <label for="pic_title">Address*:</label>
+    <input type="text" class="form-control" name="address"    id="address">
+  </div>
+
+  <div class="form-group">
+    <label for="pic_title">City*:</label>
+    <input type="text" class="form-control" name="city"    id="city">
+  </div>
+
+  <div class="form-group">
+    <label for="pic_title">State*:</label>
+    <select name="state" id="state" class="form-control">
+  <option value="Kerala">Kerala</option>
+  <option value="TamilNadu">TamilNadu</option>
+</select>
+
+    <div class="form-group">
+    <label for="pic_title">Work Experience*:</label>
+    <input type="number" class="form-control" name="work"    id="work">
+  </div>
  
-class Upload extends CI_Controller{
-	
-	public function __construct(){
-		parent::__construct();
-		$this->load->model('pic_model');
-		$this->load->library('form_validation');
-		
-		$this->load->view('header');
 
-	}
-	
-	public function form(){
-		$this->load->view('upload_form');
-		$this->load->view('footer');
-	}
-	
-	public function file_data(){
-		//validate the form data 
 
-		$this->form_validation->set_rules('fullname', 'Full Name', 'required');
-		
-        if ($this->form_validation->run() == FALSE){
-			$this->load->view('upload_form');
-		}else{
-			
-			//get the form values
-			$data['fullname'] = $this->input->post('fullname', TRUE);
-			$data['email'] = $this->input->post('email', TRUE);
-			$data['address'] = $this->input->post('address', TRUE);
-			$data['city'] = $this->input->post('city', TRUE);
-			$data['state'] = $this->input->post('state', TRUE);
-			$data['work'] = $this->input->post('work', TRUE);
+  <div class="form-group">
+    <label for="pic_title">University*:</label>
+    <input type="text" class="form-control" name="uni"    id="uni">
+  </div>
 
-			$data['uni'] = $this->input->post('uni', TRUE);
-			$data['fieldofstudy'] = $this->input->post('fieldofstudy', TRUE);
-			$data['degree'] = $this->input->post('degree', TRUE);
+  <div class="form-group">
+    <label for="pic_title">Field of Study*:</label>
+    <input type="text" class="form-control" name="fieldofstudy"    id="fieldofstudy">
+  </div>
 
-			//file upload code 
-			//set file upload settings 
-			$config['upload_path']          = APPPATH. '../assets/uploads/';
-			$config['allowed_types'] = 'gif|jpg|png|pdf|txt';
+  <div class="form-group">
+    <label for="pic_title">Degree*:</label>
+    <select name="degree" id="degree" class="form-control">
+  <option value="B.tech">B.tech</option>
+  <option value="B.sc">B.sc</option>
+  <option value="M.Sc">M.Sc</option>
+</select>
+  </div>
 
-			$this->load->library('upload', $config);
+  <div class="form-group">
+    <label for="pic_file">Upload CV*:</label>
+    <input type="file" name="file2" class="form-control"  id="file2">
+  </div>
 
-			 if ( ! $this->upload->do_upload('file1')){
-			 	$error = array('error' => $this->upload->display_errors());
-			 	$this->load->view('upload_form', $error);
-			 }else{
-
-			// 	//file is uploaded successfully
-			// 	//now get the file uploaded data 
-			 	$upload_data = $this->upload->data();
-
-			// 	//get the uploaded file name
-			 	$data['file1'] = $upload_data['file_name'];
-
-			// 	//store pic data to the db
-			 	//$this->pic_model->store_pic_data($data);
-
-				
-			 }
-
-			 if ( ! $this->upload->do_upload('file2')){
-			 	$error = array('error' => $this->upload->display_errors());
-			 	$this->load->view('upload_form', $error);
-			 }else{
-
-			 	//file is uploaded successfully
-			 	//now get the file uploaded data 
-			 	$upload_data = $this->upload->data();
-
-			 	//get the uploaded file name
-		    	$data['file2'] = $upload_data['file_name'];
-
-			// 	//store pic data to the db
-			 	$this->pic_model->store_pic_data($data);
-
-			
-			// }
-			$this->load->view('footer');
-		}
-	}
-}
-}
+  <div class="form-group">
+    <label for="file2">Upload Cover Letter*:</label>
+    <input type="file" name="file1" class="form-control"  id="file1">
+  </div>
+  
+ 
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>

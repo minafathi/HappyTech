@@ -1,38 +1,42 @@
-# HappyTech
+# codeigniter-upload
+Codeigniter 3 – Upload file and insert data into database!
 
-Case Study
-**********
+Basic Setup:
 
-The company HappyTech is growing and advertises a significant number of positions. Therefore, the
-number of applications they have to deal with is increasing too. The company’s policy is to respond to
-both the successful and unsuccessful applications by sending them feedback. As writing up letters for
-every applicant takes a lot of time, the company identified an ontology that could be used by a software
-application to generate the feedback. The feedback application will be used by anybody involved in
-reviewing the applications.
+<strong>MYSQL PART:</strong>
 
-The main tasks the user has to perform are:
+Go to MySQL or open phpMyadmin and create a database name called '<strong>codeigniter3</strong>' and then create a table called <strong>'pictures'</strong>. I am attaching the table structure here:
+<pre class="toolbar-overlay:false lang:mysql decode:true ">CREATE TABLE `pictures` (
+  `pic_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `pic_title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `pic_desc` text COLLATE utf8_unicode_ci NOT NULL,
+  `pic_file` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;</pre>
+MySQL part is over. No need to go to the database again.
 
-1. Create, edit, delete a template
+<strong>CODEIGNITER CONFIGURATIONS:</strong>
 
-A template has
-• a header containing relevant information about the person the feedback is for, the person
-giving the feedback and what the feedback is for (CV, interview, technical interview, etc)
-• a number of sections. Each section contains a title, a list of pairs of codes and the comments
-to be included in the feedback. The template can be used to review the applications for one
-or more positions advertised.
+1) First, open the <strong>database.php</strong> file inside <strong>/codigniter3/application/config/database.php </strong>and change the mysql <strong>hostname, username and password</strong> as per your database server configuration:
+<pre class="toolbar-overlay:false lang:php decode:true">$db['default'] = array(
+	'dsn'	=&gt; '',
+	'hostname' =&gt; 'localhost',//change this as per your server
+	'username' =&gt; 'root',//change this as per your server
+	'password' =&gt; '', //change this as per your server
+	'database' =&gt; 'codeigniter3',
+	'dbdriver' =&gt; 'mysqli',
+	'dbprefix' =&gt; '',
+	'pconnect' =&gt; FALSE,
+	'db_debug' =&gt; (ENVIRONMENT !== 'production'),
+	'cache_on' =&gt; FALSE,
+	'cachedir' =&gt; '',
+	'char_set' =&gt; 'utf8',
+	'dbcollat' =&gt; 'utf8_general_ci',
+	'swap_pre' =&gt; '',
+	'encrypt' =&gt; FALSE,
+	'compress' =&gt; FALSE,
+	'stricton' =&gt; FALSE,
+	'failover' =&gt; array(),
+	'save_queries' =&gt; TRUE
+);</pre>
 
-2.Generate feedback
-
-Before the feedback writing process starts, the template to be used has to be selected. The
-feedback window contains the header, the sections with the codes that can be selected via
-checkboxes or radio buttons and a text box for free comment. The feedback is saved as a pdf file
-using the applicant’s code or name.
-
-3.Email the applicants the feedback.
-
-The emails should be sent automatically, in bulk once all interviews for a position are completed.
-Extra feature
-The online system should allow the candidates to upload their CV.
-Requirements
-Your team has been tasked with developing a prototype which meets the requirements as laid out
-above.
+2) Then, open config.php file inside <strong>/codigniter3/application/config/config.php </strong>and set the <strong>$config['base_url']</strong> to <strong>$config['base_url'] = 'http://localhost/codeigniter3/'</strong>;

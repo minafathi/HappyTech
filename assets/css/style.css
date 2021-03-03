@@ -1,4 +1,5 @@
 .navbar {
+    width: 100% !important;
     height: 50px !important;
     background-color: #1b235f !important;
     color: white !important;
@@ -34,10 +35,22 @@ a {
     z-index: 0;
 }
 
+@media (max-width: 499px){
+    .background {
+        background-image: url('')
+    }       
+}
+
 .backimg {
     z-index: 0;
 }
 
+@media (max-width: 499px){
+    .backimg {
+        width: 90%;
+    }
+        
+}
 .welcome {
     z-index: 10;
     margin: 0 auto !important;
@@ -46,4 +59,112 @@ a {
     right: 40% !important;
     left: 40% !important;
     top: 380px;
+}
+
+
+@media (max-width: 499px){
+    .welcome {
+        width: 30%;
+        font-size: 5px;
+        top: 90px;
+        right: 10px;
+    }       
+}
+
+.feedbackback {
+    margin-top: 50px !important;
+    width: 90%;
+    height: 800px;
+    margin: 0 auto !important;
+    /* position: fixed; */
+    /* top: 50px !important; */
+    padding-top: 50px !important;
+    text-align: center !important;
+    /* background-image: url('http://localhost:90/happytech/assets/images/6c1299c2a5d7fb27788d6df7d4a5dc3b.jpg'); */
+    z-index: 0;
+}
+
+/* .feed {
+    margin: 0 auto !important;
+    position: fixed;
+    top: 50px !important;
+    z-index: 0 !important;
+} */
+.container {
+    margin: 0 auto !important;
+}
+
+.tmplbox1 {
+    width: 90%;
+    min-height: 400px;
+    padding-top: 30px;
+    text-align: left !important;
+    padding-left: 30px;
+    position: absolute;
+    left: 10%;
+    top: 100px;
+    background-color: #a9d7ef;
+    margin-top: 100px !important;
+    z-index: 10;
+    border-radius: 60px !important; 
+    border: solid;
+    border-color: black;
+    border-width: 3px;
+    margin-bottom: 100px !important;
+}
+
+.tmplbox2 {
+    width: 90%;
+    height: 400px;
+    /* margin-left: 30px !important; */
+    position: absolute;
+    right: 10%;
+    top: 100px;
+    background-color: #a9d7ef;
+    margin-top: 100px !important;
+    z-index: 10;
+    border-radius: 60px !important; 
+    /* border-color: black; */
+    border: solid;
+    border-color: black;
+    border-width: 3px;
+    padding-bottom: 30px;
+    margin-bottom: 100px !important;
+}
+
+@media (max-width: 499px){
+    .tmplbox2{
+        top: 600px !important;
+    }
+}
+
+.box {
+    width: 100%;
+    height: 30px;
+}
+
+.cttitle {
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+
+.yellowbox {
+    width: 80%;
+    /* margin-top: 40px !important; */
+    top: 40px !important;
+    min-height: 270px;
+    margin: 0 auto !important;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    background-color: #fad56f;
+    border: solid;
+    border-radius: 30px;
+    border-color: black;
+    border-width: 3px;
+}
+
+.fa-plus {
+    width: 5%;
+    height: auto;
 }

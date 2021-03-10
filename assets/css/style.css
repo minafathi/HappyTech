@@ -168,3 +168,62 @@ a {
     width: 5%;
     height: auto;
 }
+
+.commentbox {
+    width: 80% !important;
+    margin-top: 30px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding-top: 30px !important;
+    padding-left: 20px !important;
+    padding-bottom: 20px !important;
+    background-color: #c4944e !important;
+    border: solid;
+    border-radius: 30px;
+    border-color: black;
+    border-width: 3px;
+}
+
+th, td {
+    padding-right: 5px !important;
+}
+
+.idinp {
+    width: 40% !important;
+}
+
+.crow {
+    padding-top: 10px !important;
+    margin: 0 auto !important;
+}
+.cmb {
+    margin-right: 10px !important;
+}
+
+.bluebox {
+    width: 60% !important;
+    text-align: left;
+    top: 40px !important;
+    min-height: 270px;
+    margin: 0 auto !important;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    background-color: #a9d7ef;
+    border: solid;
+    border-radius: 30px;
+    border-color: black;
+    border-width: 3px;
+}
+
+.fdate {
+    width: 15% !important;
+}
+
+.subform {
+    margin-right: 50% !important;
+}
+
+.addcm {
+    cursor: pointer !important; 
+}

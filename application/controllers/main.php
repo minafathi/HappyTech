@@ -21,6 +21,6 @@ class Main  extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('main_view');
-		$data['title']="Happy Tech";
+		$data['title']="Happy Tech"; // updates
 	}
 }

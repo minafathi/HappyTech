@@ -24,8 +24,8 @@ $(document).ready(function(){
         $('.nav-item').removeClass('active');
         $(".feedback").attr("class","nav-item feedback active");
     }
-        
-	$('.addcm').click(function(){
+    
+    $('.addcm').click(function(){
         var c = $('.cmbox').children().length +1
         $('.cmbox').append('<p><strong>Comment '+c+'</strong><input type="text" name="comment[]" placeholder="Enter a Comment" /></p>')
     

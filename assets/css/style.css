@@ -96,7 +96,7 @@ a {
 
 .tmplbox1 {
     width: 90%;
-    min-height: 400px;
+    min-height: 540px;
     padding-top: 30px;
     text-align: left !important;
     padding-left: 30px;
@@ -113,9 +113,15 @@ a {
     margin-bottom: 100px !important;
 }
 
+.ScrollStyle
+{
+    max-height: 150px !important;
+    overflow-y: scroll !important;
+}
+
 .tmplbox2 {
     width: 90%;
-    height: 400px;
+    min-height: 540px;
     /* margin-left: 30px !important; */
     position: absolute;
     right: 10%;
@@ -205,6 +211,7 @@ th, td {
     text-align: left;
     top: 40px !important;
     min-height: 270px;
+    margin-top: 100px !important;
     margin: 0 auto !important;
     padding-top: 30px;
     padding-left: 20px;

@@ -4,11 +4,14 @@ class Create_template extends CI_Model {
     function create($title, $comments, $type) {
         $query = $this->db->query("
         INSERT INTO templates (title, type, comment_number)
-        VALUES ('$title', '$type','3')");
+        VALUES ('$title', '$type','".COUNT($comments)."')");
+
+        // $id = $this->db->query('SELECT id FROM templates WHERE id=MAX(id)');
+
         foreach( $comments as $key => $n ) {
             $query = $this->db->query("
             INSERT INTO comments (template_id, comment)
-            VALUES ('$title', '$n')");
+            VALUES ((SELECT MAX( id ) FROM templates), '$n')");
           }
 
         if($query !== FALSE){

@@ -2,7 +2,7 @@
     <img class="backimg feed" src="<?php echo base_url() ?>assets/images/6c1299c2a5d7fb27788d6df7d4a5dc3b.jpg" />
     <div class="container">
         <div class="row">
-            <div class="col-md-4 tmplbox1">
+            <div class="col-md-4 tmplbox1 ScrollStyle">
                 
                 <form action="<?php echo base_url(); ?>template/create_tmpl" method="post">
                     <div class="box"></div>
@@ -27,7 +27,7 @@
 
             </div>
             
-            <div class="col-md-4 tmplbox2">
+            <div class="col-md-4 tmplbox2 ScrollStyle">
                 <br /><br />
                 <form method='post' action=''>
                     <div class="commentbox">

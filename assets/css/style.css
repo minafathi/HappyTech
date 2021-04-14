@@ -95,13 +95,14 @@ a {
 }
 
 .tmplbox1 {
-    width: 90%;
+    width: 95%;
+    margin: 0 auto !important;
     min-height: 540px;
     padding-top: 30px;
     text-align: left !important;
     padding-left: 30px;
     position: absolute;
-    left: 10%;
+    /* left: 10%; */
     top: 100px;
     background-color: #a9d7ef;
     margin-top: 100px !important;
@@ -120,7 +121,7 @@ a {
 }
 
 .tmplbox2 {
-    width: 90%;
+    width: 95%;
     min-height: 540px;
     /* margin-left: 30px !important; */
     position: absolute;
@@ -140,18 +141,21 @@ a {
 
 @media (max-width: 499px){
     .tmplbox2{
-        top: 600px !important;
+        right: auto;
+        top: 700px !important;
     }
 }
 
 .box {
     width: 100%;
-    height: 30px;
+    height: 10px;
 }
 
 .cttitle {
     width: 100% !important;
     margin: 0 auto !important;
+    margin-left: 30% !important;
+    margin-right: 30% !important;
 }
 
 .yellowbox {
@@ -176,7 +180,7 @@ a {
 }
 
 .commentbox {
-    width: 80% !important;
+    width: 90% !important;
     margin-top: 30px !important;
     height: auto !important;
     margin: 0 auto !important;
@@ -207,13 +211,14 @@ th, td {
 }
 
 .bluebox {
-    width: 60% !important;
+    width: 90% !important;
     text-align: left;
-    top: 40px !important;
+    /* top: auto; */
     min-height: 270px;
     margin-top: 100px !important;
     margin: 0 auto !important;
     padding-top: 30px;
+    position: absolute;
     padding-left: 20px;
     padding-bottom: 20px;
     background-color: #a9d7ef;
@@ -221,6 +226,15 @@ th, td {
     border-radius: 30px;
     border-color: black;
     border-width: 3px;
+}
+
+@media (max-width: 499px){
+    .bluebox {
+        width: 90% !important;
+        margin: 0 auto !important;
+        top: 1400px;
+    }
+        
 }
 
 .fdate {
@@ -233,4 +247,66 @@ th, td {
 
 .addcm {
     cursor: pointer !important; 
+}
+
+.tmpl_ttl {
+    margin: 0 auto !important;
+
+}
+
+.tbtn {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    font-size: large;
+    padding-left: 1px !important;
+    padding-right: 1px !important; 
+    padding-top: 1px !important;
+    padding-bottom: 1px !important; 
+}
+
+.plus {
+    width: 15px;
+    height: 15px;
+    margin: auto !important;
+}
+
+.emptybox {
+    width: 100%;
+    height: 100px;
+    background-color: brown;
+}
+
+.bx1 {
+    width: 90%;
+}
+
+.bx2 {
+    width: 90%;
+    background-color: lemonchiffon;
+    border: solid;
+    border-color: black;
+    border-width: 3px;
+    border-radius: 10px;
+}
+
+.adto {
+    font-size: small;
+}
+
+.commtext {
+    width: 90% !important;
+}
+
+.hrc {
+    width: 100%;
+    margin: 0 auto !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+.space {
+    margin-left: 10px !important;
 }

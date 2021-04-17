@@ -1,5 +1,5 @@
 $(document).ready(function(){
-                
+    $('.popuptext').hide();
     if($(".home  a").attr("href")==window.location.href){
         $('.nav-item').removeClass('active');
         $(".home").attr("class","nav-item home active");
@@ -24,7 +24,19 @@ $(document).ready(function(){
         $('.nav-item').removeClass('active');
         $(".feedback").attr("class","nav-item feedback active");
     }
-        
-        
     
+    $('.addcm').click(function(){
+        var c = $('.cmbox').children().length +1
+        $('.cmbox').append('<p><strong>Comment '+c+'</strong><input class="space" type="text" name="comment[]" placeholder="Enter a Comment" /></p>')
+    
+    })
+        
+    $('.editme').click(function(event){
+        event.preventDefault();
+        // $('.popuptext').toggle();
+        // alert("asdasdad");
+        return false;
+    })
+
+    $( "#datepicker" ).datepicker();
 });

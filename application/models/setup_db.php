@@ -4,8 +4,16 @@ class Setup_db extends CI_Model{
 
     public function setup_database(){
         $this->load->dbforge(); 
-        $this->dbforge->create_database('happytech');
-
+        $this->load->dbutil();
+        if($this->dbutil->database_exists('happytech')){
+                // $db = $this->load->database('happytech');
+        } else {
+                $this->dbforge->create_database('happytech', TRUE);
+        }
+        
+        $db = $this->load->database('happytech'); 
+        $this->db->query('use happytech');
+        
         $fields = array(
                 'id' => array(
                         'type' => 'INT',

@@ -1,9 +1,24 @@
 
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
+    <title>Hello, world!</title>
+</head>
+
+<body>
   <div style="color:red">
   
   <?php if(isset($error)){print $error;}?>
 </div>
-<?php  echo form_open_multipart('upload/file_data');?>
+<?php echo form_open_multipart('upload/file_data');?>
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -17,7 +32,7 @@
                                 <input type="text" class="form-control" name="fullname" id="fullname">
                             </div>
                         </div>
-                         <div style="color:red;"><?php  echo form_error('fullname'); ?></div>
+                         <div style="color:red;"><?php echo form_error('fullname'); ?></div>
                         
                     </div>
                     <div class="form-group">
@@ -29,7 +44,7 @@
                                 <input type="email" class="form-control" name="email" id="email">
                             </div>
                         </div>
-                        <div style="color:red;"><?php  echo form_error('email'); ?></div>
+                        <div style="color:red;"><?php echo form_error('email'); ?></div>
                     </div>
                     <div class="form-group">
                         <div class="row">
@@ -40,7 +55,7 @@
                                 <input type="text" class="form-control" name="address" id="address">
                             </div>
                         </div>
-                        <div style="color:red;"><?php  echo form_error('address'); ?></div>
+                        <div style="color:red;"><?php echo form_error('address'); ?></div>
                     </div>
                     <div class="row">
                         <div class="col-md">
@@ -54,7 +69,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div style="color:red;"><?php  echo form_error('city'); ?></div>
+                            <div style="color:red;"><?php echo form_error('city'); ?></div>
                         </div>
                         <div class="col-md">
                             <div class="form-group">
@@ -69,7 +84,7 @@
                                             <option value="TamilNadu">TamilNadu</option>
                                         </select>
                                     </div>
-                                    <div style="color:red;"><?php  echo form_error('state'); ?></div>
+                                    <div style="color:red;"><?php echo form_error('state'); ?></div>
                                 </div>
                             </div>
                         </div>
@@ -113,7 +128,7 @@
                                 <textarea class="form-control" name="work" id="work" cols="30" rows="2"></textarea>
                             </div>
                         </div>
-                        <div style="color:red;"><?php  echo form_error('work'); ?></div>
+                        <div style="color:red;"><?php echo form_error('work'); ?></div>
                     </div>
                     <div class="form-group">
                         <div class="row">
@@ -124,7 +139,7 @@
                                 <input type="text" class="form-control" name="uni" id="uni">
                             </div>
                         </div>
-                        <div style="color:red;"><?php  echo form_error('uni'); ?></div>
+                        <div style="color:red;"><?php echo form_error('uni'); ?></div>
                     </div>
 
                     <div class="form-group">
@@ -136,7 +151,7 @@
                                 <input type="text" class="form-control" name="fieldofstudy" id="fieldofstudy">
                             </div>
                         </div>
-                        <div style="color:red;"><?php  echo form_error('fieldofstudy'); ?></div>
+                        <div style="color:red;"><?php echo form_error('fieldofstudy'); ?></div>
                     </div>
                     <div class="form-group">
                         <div class="row">
@@ -154,7 +169,7 @@
                         </div>
                     </div>
                 </div>
-                <div style="color:red;"><?php  echo form_error('degree'); ?></div>
+                <div style="color:red;"><?php echo form_error('degree'); ?></div>
             </div>
             <div class="col-md-6">
                 <div class="custom-form terms-condition">
@@ -171,7 +186,7 @@
                         </label>
                     </div>
                     <div style="text-align: justify;
-    background: brown;"><?php  echo form_error('condition'); ?></div>
+    background: brown;"><?php echo form_error('condition'); ?></div>
                 </div>
             </div>
 
@@ -182,4 +197,9 @@
     </div>
 
     </form>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
+</body>
+
+</html>

@@ -1,20 +1,85 @@
 <?php 
     class Pages extends CI_Controller{
+
+        public function __construct(){
+            parent::__construct();
+            $this->load->model('setup_db');                                                 
+            $this->setup_db->setup_database();
+            $this->load->dbforge('project');
+                    $fields_template = array(
+                        'id' => array(
+                                'type' => 'INT',
+                                'constraint' => 5,
+                                'unsigned' => TRUE,
+                                'auto_increment' => TRUE,
+                        ),
+                        'title' => array(
+                                'type' => 'VARCHAR',
+                                'constraint' => '255',
+                                'unique' => TRUE,
+                        ),
+                        'type' => array(
+                                'type' =>'varchar',
+                                'constraint' => '255',
+                        ),
+                        'comment_number' => array(
+                        'type' =>'varchar',
+                        'constraint' => '100',
+                ),
+                );
+                
+
+
+                $this->dbforge->add_field($fields_template);
+                $this->dbforge->add_key('id', TRUE);
+                $this->dbforge->create_table('templates', TRUE);
+            // $this->load->dbforge();
+            
+            // if($this->dbforge->create_database('happytech'))
+            //         {
+            //             $db['default'] = array(
+            //                 'dsn'	=> '',
+            //                 'hostname' => '127.0.0.1:8889',
+            //                 'username' => 'root',
+            //                 'password' => 'root',
+            //                 'database' => 'happytech',
+            //                 'dbdriver' => 'mysqli',
+            //                 'dbprefix' => '',
+            //                 'pconnect' => FALSE,
+            //                 'db_debug' => FALSE,
+            //                 'cache_on' => FALSE,
+            //                 'cachedir' => '',
+            //                 'char_set' => 'utf8',
+            //                 'dbcollat' => 'utf8_general_ci',
+            //                 'swap_pre' => '',
+            //                 'encrypt' => FALSE,
+            //                 'compress' => FALSE,
+            //                 'stricton' => FALSE,
+            //                 'failover' => array(),
+            //                 'save_queries' => TRUE
+            //             );
+                    // }
+            
+        }
         public function viewhome($page = 'home'){
+            
             $data['title'] = ucfirst($page);
             $this->load->view('templates/header');
             $this->load->view('pages/'.$page, $data);
             $this->load->view('templates/footer');
-
+            
         }
         
         public function view_feedback(){
+            // $this->load->model('setup_db');
+            // $this->setup_db->setup_tables();
             $this->load->model('read_template'); 
             $dataf['templates'] = $this->read_template->read_tmpl();
             $dataf['comments'] = $this->read_template->read_comm();
             $this->load->view('templates/header');
             $this->load->view("pages/feedback",$dataf);
             $this->load->view('templates/footer');
+            
 
         }
 

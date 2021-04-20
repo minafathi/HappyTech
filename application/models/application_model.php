@@ -9,7 +9,6 @@ class Application_model extends CI_Model{
 		$all_pics = $this->db->get('pictures');
 		return $all_pics->result();
 	}
-
 	//save picture data to db
 	function store_pic_data($data){
 		$fullname = $data['fullname'];

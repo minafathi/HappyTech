@@ -1,5 +1,4 @@
 <div style="color:red">
-  
   <?php ?>
   <?php if(isset($_SESSION['upload1_error'])){ ?>
         <h3><?php echo $this->session->userdata('upload1_error'); ?></h3>

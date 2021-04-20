@@ -16,7 +16,6 @@ class Application_form extends CI_Controller{
 		$this->load->view('upload_form');
 		$this->load->view('footer');
 	}
-	
 	public function file_data(){
 		//validate the form data 
 

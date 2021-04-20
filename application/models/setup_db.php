@@ -1,4 +1,3 @@
-
 <?php
 class Setup_db extends CI_Model{
 
@@ -24,7 +23,6 @@ class Setup_db extends CI_Model{
                 'template_id' => array(
                         'type' => 'VARCHAR',
                         'constraint' => '100',
-                        'unique' => TRUE,
                 ),
                 'comment' => array(
                         'type' =>'text',
@@ -46,7 +44,6 @@ class Setup_db extends CI_Model{
                 'title' => array(
                         'type' => 'VARCHAR',
                         'constraint' => '255',
-                        'unique' => TRUE,
                 ),
                 'type' => array(
                         'type' =>'varchar',

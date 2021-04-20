@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost:90/happytech';
+$config['base_url'] = 'http://localhost/happytech';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +35,8 @@ $config['base_url'] = 'http://localhost:90/happytech';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'index.php';
+
 
 /*
 |--------------------------------------------------------------------------

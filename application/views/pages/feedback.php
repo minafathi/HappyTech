@@ -8,6 +8,9 @@
     <?php if(isset($_SESSION['template'])){ ?>
         <h3><?php echo $this->session->userdata('template'); ?></h3>
     <?php } ?>
+    <?php if(isset($_SESSION['template'])){ ?>
+        <h3><?php echo $this->session->userdata('db'); ?></h3>
+    <?php } ?>
     <img class="backimg feed" src="<?php echo base_url() ?>assets/images/6c1299c2a5d7fb27788d6df7d4a5dc3b.jpg" />
     <div class="container">
         <div class="row">

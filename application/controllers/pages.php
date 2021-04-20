@@ -1,20 +1,32 @@
 <?php 
     class Pages extends CI_Controller{
+
+        public function __construct(){
+            parent::__construct();
+            // $sql = "CREATE DATABASE IF NOT EXISTS happytech";
+            // $this->db->query($sql);
+            $this->load->model('setup_db');                                                 
+            $this->setup_db->setup_database();
+        }
         public function viewhome($page = 'home'){
+            
             $data['title'] = ucfirst($page);
             $this->load->view('templates/header');
             $this->load->view('pages/'.$page, $data);
             $this->load->view('templates/footer');
-
+            
         }
         
         public function view_feedback(){
+            // $this->load->model('setup_db');
+            // $this->setup_db->setup_tables();
             $this->load->model('read_template'); 
             $dataf['templates'] = $this->read_template->read_tmpl();
             $dataf['comments'] = $this->read_template->read_comm();
             $this->load->view('templates/header');
             $this->load->view("pages/feedback",$dataf);
             $this->load->view('templates/footer');
+            
 
         }
 

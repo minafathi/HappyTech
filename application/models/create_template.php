@@ -2,6 +2,8 @@
 
 class Create_template extends CI_Model {
     function create($title, $comments, $type) {
+        $db = $this->load->database('happytech'); 
+        $this->db->query('use happytech');
         $query = $this->db->query("
         INSERT INTO templates (title, type, comment_number)
         VALUES ('$title', '$type','".COUNT($comments)."')");

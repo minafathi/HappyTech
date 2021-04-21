@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <div style="color:red">
   <?php ?>
   <?php if(isset($_SESSION['upload1_error'])){ ?>
@@ -18,8 +18,6 @@
 <img class="backimg feed" src="<?php echo base_url() ?>assets/images/6c1299c2a5d7fb27788d6df7d4a5dc3b.jpg" />
     
 <form action="<?php echo base_url(); ?>application_form/file_data" method="post">    
-=======
->>>>>>> ad28fd2448bf44ff7959ec044e1bc2c81fc859f2
     <div class="container">
         <div class="row">
             <div class="col-md-6">

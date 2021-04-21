@@ -51,19 +51,16 @@ class Setup_db extends CI_Model{
                 ),
                 'comment_number' => array(
                         'type' =>'varchar',
-<<<<<<< HEAD
-                        'constraint' => '100',   
-                                         ),
-=======
-                        'constraint' => '100',                            ),
->>>>>>> ad28fd2448bf44ff7959ec044e1bc2c81fc859f2
+                        'constraint' => '100', 
+                ),  
+
         );
                             
         $this->dbforge->add_field($fields_template);
         $this->dbforge->add_key('id', TRUE);
         $this->dbforge->create_table('templates', TRUE);
                         
-<<<<<<< HEAD
+
         // Table for application form ===========================================
         
         $fields_application = array(
@@ -125,9 +122,6 @@ class Setup_db extends CI_Model{
         }
 
 }
-=======
-                 
-        }
 
-}
->>>>>>> ad28fd2448bf44ff7959ec044e1bc2c81fc859f2
+
+

@@ -24,12 +24,15 @@ class Application_model extends CI_Model{
 
 		$file1= $data['file1'];
 		$file2 = $data['file2'];
+		// $file1= 'f';
+		// $file2 = 'ffff';
+
 		$db = $this->load->database('happytech'); 
         $this->db->query('use happytech');
-		$this->session->set_userdata('data',$data, 300);
+		
 		$query = $this->db->query("
-        INSERT INTO templates (fullname, email, address, city, state, work, uni, fieldofstudy, degree, file1, file2)
-        VALUES ('$fullname', '$email','$address', '$city','$state','$work','$uni','$fieldofstudy','$degree','$file1','$file2' )");
+        INSERT INTO application (fullname, email, address, city, state, work, uni, fieldofstudy, degree, file1, file2)
+        VALUES ('$fullname', '$email','$address', '$city','$state','$work','$uni','$fieldofstudy','$degree','json_encode($file1)','json_encode($file2)' )");
 		if($query !== FALSE){
             return true;
         } else {

@@ -3,22 +3,10 @@
  
 class Application_form extends CI_Controller{
 	
-	public function __construct(){
-		parent::__construct();
-		//$this->load->model('application_model');
-		$this->load->library('form_validation');
-		
-		//$this->load->view('header');
 
-	}
-	
-	public function form(){
-		$this->load->view('upload_form');
-		$this->load->view('footer');
-	}
 	public function file_data(){
 		//validate the form data 
-
+		$this->load->library('form_validation');
 		$this->form_validation->set_rules('fullname', 'Full Name', 'required');
 		$this->form_validation->set_rules('email', 'Email', 'required');
 		$this->form_validation->set_rules('address', 'Address', 'required');
@@ -45,28 +33,30 @@ class Application_form extends CI_Controller{
 			$data['uni'] = $this->input->post('uni', TRUE);
 			$data['fieldofstudy'] = $this->input->post('fieldofstudy', TRUE);
 			$data['degree'] = $this->input->post('degree', TRUE);
-			$data['file1'] = $this->input->post('file1', TRUE);
-            $data['file2'] = $this->input->post('file2', TRUE);
+			// $data['file1'] = $this->input->post('file1', TRUE);
+            // $data['file2'] = $this->input->post('file2', TRUE);
 
 			$terms = $this->input->post('condition' , TRUE);
 			//file upload code 
 			//set file upload settings 
-			$config['upload_path']          = base_url().'assets/uploads/';
+			$upload_path = realpath(APPPATH . '../assets/uploads');
+			$config['upload_path'] = $upload_path;
 			$config['allowed_types'] = 'gif|jpg|png|pdf|txt|docx';
-
+			$this->session->set_userdata('data', $data, 300);
 			$this->load->library('upload', $config);
 
-			 if ( ! $this->upload->do_upload($data['file1'])){
-				$this->session->set_userdata('upload1_error', 'Upload 1 Error error!', 300);
-				//redirect(base_url().'/app');
+			 if ( ! $this->upload->do_upload('file1')){
+				$error = array('error' => $this->upload->display_errors());
+				$this->session->set_userdata('upload1_error', 'Failed to upload cover letter! Try again!' , 300);
+				redirect(base_url().'/app');
 			 }else{
 
 			// 	//file is uploaded successfully
 			// 	//now get the file uploaded data 
-			 	$upload_data = $this->upload->data();
+			 	$upload_data_file1 = $this->upload->data();
 
 			// 	//get the uploaded file name
-			 	$data['file1'] = $upload_data['file_name'];
+			 	$data['file1'] = $upload_data_file1['file_name'];
 
 			// 	//store pic data to the db
 			 	//$this->pic_model->store_pic_data($data);
@@ -74,9 +64,9 @@ class Application_form extends CI_Controller{
 				
 			 }
 
-			 if ( ! $this->upload->do_upload($data['file2'])){
+			 if ( ! $this->upload->do_upload('file2')){
 			 	$error = array('error' => $this->upload->display_errors());
-				$this->session->set_userdata('upload2_error', 'Upload 2 error!', 300);
+				$this->session->set_userdata('upload2_error', 'Failed to upload CV! Try again!', 300);
 				//redirect(base_url().'/app');
 			 	//$this->load->view('upload_form', $error);
 
@@ -84,26 +74,28 @@ class Application_form extends CI_Controller{
 
 			 	//file is uploaded successfully
 			 	//now get the file uploaded data 
-			 	$upload_data = $this->upload->data();
+			 	$upload_data_file2 = $this->upload->data();
 
 			 	//get the uploaded file name
-		    	$data['file2'] = $upload_data['file_name'];
+		    	$data['file2'] = $upload_data_file2['file_name'];
 				$this->load->model('application_model');
 			// 	//store pic data to the db
-			 	if($this->application_model->store_pic_data($data)){
-					redirect(base_url().'/app');
+			 	 if($this->application_model->store_pic_data($data)){
+				 	$this->session->set_flashdata('Successful_apply', 'Congratulations! Your application is submitted!', 300);
+				 	redirect(base_url().'/app');
 					
-				 } 
-				 else {
-					redirect(base_url());
+				  } 
+				  else {
+				 	$this->session->set_flashdata('Successful_apply', 'Your application submition has failed! Try again!', 300);
+				 	redirect(base_url().'/app');
 					
-				 }
-
+				  }
+                    
 			
-			// }
+			}
 			//$this->load->view('footer');
 			redirect(base_url().'/app');
 		}
 	}
 }
-}
+// }

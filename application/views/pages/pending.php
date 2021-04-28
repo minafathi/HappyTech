@@ -1,3 +1,7 @@
+<!--load the back-ground image-->
+<img class="backimg_app feed" src="<?php echo base_url() ?>assets/images/6c1299c2a5d7fb27788d6df7d4a5dc3b.jpg" />
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,9 +79,6 @@
 
 <body>
 
-<h1>Pending Review</h1>
-<hr>
-
 <table width="600" border="1" cellspacing="5" cellpadding="5">
 	<tr id = "header">
 		<th>Sr No</th>
@@ -88,11 +89,13 @@
 		<th>Experience</th>
 		<th>Applied For</th>
 		<th>Date of Applied</th>
+		<th>Action</th>
 		<!--		<th>Delete</th>-->
 		<!--		<th>Update</th>-->
 	</tr>
 	<?php
 	$i=1;
+
 	foreach($data as $row)
 	{
 		echo "<tr>";
@@ -104,6 +107,8 @@
 		echo "<td>".$row->experience."</td>";
 		echo "<td>".$row->applied_for."</td>";
 		echo "<td>".$row->date_of_applied."</td>";
+			echo "<td><a href=‘updatedata?id=".$row->id."'>Edit</a></td>";
+
 		echo "</tr>";
 		$i++;
 	}
